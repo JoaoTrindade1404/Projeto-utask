@@ -1,0 +1,9 @@
+.container{
+    display: flex;
+    justify-content: space-around;
+}
+
+#imgLogin{
+    width: 34rem;
+    height: 36.4rem;
+}
