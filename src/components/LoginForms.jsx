@@ -4,8 +4,10 @@ import styles from '../components/LoginForms.module.css'
 import divisor from '../assets/DivisorLogin.svg'
 import iconVer from '../assets/iconVer.svg'
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 function LoginForms(){
+    const navigate = useNavigate();
     const [showPassword, setShowPassword] = useState(false); 
 
     const togglePassword = () => {
@@ -28,7 +30,7 @@ function LoginForms(){
             </div>
             <button>Entrar</button>
             <span><img src={divisor}/></span>
-            <a href="#">Nao tem cadastro? Crie uma conta</a>
+            <a onClick={() => navigate("/cadastro")}>Nao tem cadastro? Crie uma conta</a>
         </div>
     )
 }
