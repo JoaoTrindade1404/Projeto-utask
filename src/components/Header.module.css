@@ -7,4 +7,13 @@
     position: fixed;
     top: 0;
     left: 0;
+    transition: 0.3s;
+}
+
+.light{
+    background: var(--blue-200);
+}
+
+.dark{
+    background: var(--dark-2);
 }

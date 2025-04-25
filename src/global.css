@@ -20,6 +20,13 @@
   --blue-200: #226ed8;
   --blue-300: #114fa7;
   --blue-400: #002d6c;
+  --blue-600: #00122A;
+
+
+  /*dark mode*/
+
+  --dark-bg: #222;
+  --dark-2: #333333;
 }
 
 *{
@@ -33,4 +40,28 @@ body{
   font-family: 'Poppins', sans-serif;
   font-size: 1rem;
   font-weight: 400;
+  transition: 0.3s;
+}
+
+body.light{
+  background: white;
+}
+
+body.dark{
+  background: var(--dark-bg);
+  color: var(--white);
+}
+
+.dark input {
+  background: var(--dark-2);
+}
+
+.dark a {
+  color: var(--white);
+}
+
+#butao {
+  width: 10vw;
+  height: 30vh;
+  background: black;
 }

@@ -1,8 +1,8 @@
-import style from './Header.module.css'
+import styles from './Header.module.css'
 
-function Header(){
+function Header({darkMode}){
     return(
-        <header className={style.header}>
+        <header className={`${styles.header} ${darkMode ? styles.dark : styles.light}`}>
             
         </header>
     )

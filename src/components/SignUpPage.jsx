@@ -9,8 +9,8 @@ function SignUpPage() {
     <div className={styles.signpage}>
       <Header />
       <SignUpForm />
-      <img src={divisor} />
-      <img src={img} alt="Ilustração" />
+      <img className={styles.divisor}  src={divisor} />
+      <img className={styles.ilustracao} src={img} alt="Ilustração" />
     </div>
   );
 }

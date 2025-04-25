@@ -1,4 +1,74 @@
-.signForm{
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 5vh;
+    align-items: center;
+    margin-top: 5vh;
+}
+
+.signForm span {
     display: flex;
     flex-direction: column;
 }
+
+.signForm{
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+}
+
+.logo {
+    width: 30vw;
+    height: 10vh;
+}
+
+.signForm input {
+    font-size: 1rem;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    width: 25vw;
+    height: 2.5rem;
+    border: 2px var(--blue-400) solid;
+    border-radius: 8px;
+    padding-left: 7px;
+  }
+  
+  .signForm h1 {
+    color: var(--blue-600);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+  }
+
+  .signForm button {
+    width: 100%;
+    border-radius: 20px;
+    background: var(--blue-200);
+    width: 25vw;
+    height: 6vh;
+    font-weight: 600;
+    color: white;
+    font-size: 1rem;
+    border: none;
+    font-family: "Poppins", sans-serif;
+    cursor: pointer;
+    transition: 0.2s;
+    margin-top: 2vh;
+  }
+
+  .signForm button:hover{
+    background: var(--blue-400);
+  }
+
+  .senha{
+   position: relative; 
+  }
+
+  .iconSenha{
+    position: absolute;
+    right: 3%;
+    top: 50%;
+    width: 2vw;
+    height: 3.5vh;
+    cursor: pointer;
+  }
