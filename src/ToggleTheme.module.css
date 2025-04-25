@@ -1,0 +1,12 @@
+.toggletheme{
+    border-radius: 20px;
+    background: var(--blue-200);
+    width: 10vw;
+    height: 6vh;
+    font-weight: 600;
+    color: white;
+    font-size: 1rem;
+    border: none;
+    font-family: "Poppins", sans-serif;
+    cursor: pointer;
+}

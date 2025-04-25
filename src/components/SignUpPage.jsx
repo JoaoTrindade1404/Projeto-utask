@@ -4,11 +4,11 @@ import styles from "./SignUpPage.module.css"
 import SignUpForm from "./SignUpForm";
 import divisor from '../assets/Divisor.svg'
 
-function SignUpPage() {
+function SignUpPage({darkMode, toggleTheme}) {
   return (
     <div className={styles.signpage}>
-      <Header />
-      <SignUpForm />
+      <Header darkMode={darkMode} toggleTheme={toggleTheme}/>
+      <SignUpForm darkMode={darkMode}/>
       <img className={styles.divisor}  src={divisor} />
       <img className={styles.ilustracao} src={img} alt="Ilustração" />
     </div>

@@ -60,8 +60,3 @@ body.dark{
   color: var(--white);
 }
 
-#butao {
-  width: 10vw;
-  height: 30vh;
-  background: black;
-}

@@ -4,6 +4,7 @@ import SignUpPage from "./components/SignUpPage"
 import LoginPage from "./components/LoginPage";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useState, useEffect } from "react";
+import ToggleTheme from "./ToggleTheme";
 
 
 function App() {
@@ -18,11 +19,10 @@ function App() {
 
   return (
     <div className={toggleTheme}>
-      <button id="butao" onClick={toggleTheme}>CLIQUE AQUI</button>
       <Router> 
       <Routes>
-        <Route path="/" element={<LoginPage darkMode={darkMode} />} />
-        <Route path="/cadastro" element={<SignUpPage />} />
+        <Route path="/" element={<LoginPage darkMode={darkMode}  toggleTheme={toggleTheme}/>} />
+        <Route path="/cadastro" element={<SignUpPage darkMode={darkMode} toggleTheme={toggleTheme}/>} />
       </Routes>
       </Router>
     </div>

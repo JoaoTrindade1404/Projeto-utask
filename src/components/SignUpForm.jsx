@@ -4,14 +4,14 @@ import iconNaoVer from '../assets/icon NaoVisivel.svg'
 import iconVer from '../assets/iconVer.svg'
 import { useState } from "react";
 
-function SignUpForm() {
+function SignUpForm({darkMode}) {
   const [showPassword, setShowPassword] = useState(false); 
   
       const togglePassword = () => {
         setShowPassword(!showPassword); 
       };
   return (
-    <div className={styles.container}>
+    <div className={`${styles.container} ${darkMode ? styles.dark : styles.light}`}>
       <img className={styles.logo} src={utasklogo} alt="Logo Utask" />
       <form className={styles.signForm}>
         <h1>Crie uma conta</h1>
