@@ -5,6 +5,7 @@
     flex-direction: column;
     position: relative;
     gap: 2rem;
+    margin-right: 5vw;
 }
 
 .loginforms h1{
@@ -25,8 +26,9 @@
 
 .iconSenha{
     position: absolute;
-    top: 44%;
+    top: 43.5%;
     right: 3%;
+    cursor: pointer;
 }
 
 .loginforms form{
