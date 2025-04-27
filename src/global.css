@@ -54,6 +54,7 @@ body.dark{
 
 .dark input {
   background: var(--dark-2);
+  color: white;
 }
 
 .dark a {

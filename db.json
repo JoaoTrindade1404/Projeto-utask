@@ -1,0 +1,23 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "João Silva",
+      "email": "joao@example.com",
+      "password": "senha123",
+      "confirmPassword": "senha123"
+    },
+    {
+      "id": "f786",
+      "name": "Joao V P S Trindade",
+      "email": "joaotrindade430@gmail.com",
+      "password": "1234"
+    },
+    {
+      "id": "586d",
+      "name": "dsfsdf",
+      "email": "joaotrindade40@gmail.com",
+      "password": "123"
+    }
+  ]
+}

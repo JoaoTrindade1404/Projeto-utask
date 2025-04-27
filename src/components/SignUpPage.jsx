@@ -6,6 +6,7 @@ import divisor from '../assets/Divisor.svg'
 
 function SignUpPage({darkMode, toggleTheme}) {
   return (
+
     <div className={styles.signpage}>
       <Header darkMode={darkMode} toggleTheme={toggleTheme}/>
       <SignUpForm darkMode={darkMode}/>

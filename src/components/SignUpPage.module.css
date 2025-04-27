@@ -9,8 +9,8 @@
 
 .divisor {
     position: absolute;
-    right: 52%;
-    top: 12%;
+    right: 50%;
+    margin-top: 5vh;
     height: 85vh;
 }
 
