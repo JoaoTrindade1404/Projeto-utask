@@ -1,7 +1,7 @@
 {
   "users": [
     {
-      "id": 1,
+      "id": "1",
       "name": "João Silva",
       "email": "joao@example.com",
       "password": "senha123",
@@ -18,6 +18,12 @@
       "name": "dsfsdf",
       "email": "joaotrindade40@gmail.com",
       "password": "123"
+    },
+    {
+      "id": "fca6",
+      "name": "dsfsdffsf",
+      "email": "frontdesenvolvimento@gmail.com",
+      "password": "1234"
     }
   ]
 }
