@@ -10,6 +10,8 @@ import api from "../api"
 function LoginForms({ darkMode, onLogin }) {
   const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
+  const [passwordError, setPasswordError] = useState(false);
+  const [emailError, setEmailError] = useState(false);
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -40,17 +42,26 @@ function LoginForms({ darkMode, onLogin }) {
 
       if (response.data.length === 0) {
         setLoginError('Email não cadastrado');
+        setEmailError(true);
         return;
+      }
+      else{
+        setEmailError(false);
       }
 
       const user = response.data[0];
 
       if (user.password !== formData.password) {
         setLoginError('Senha incorreta');
+        setPasswordError(true);
         return;
+      }
+      else{
+        setPasswordError(false);
       }
 
       onLogin(user);
+      navigate('/kanban')
       
     } catch (error) {
       console.error('Erro no login:', error);
@@ -72,8 +83,9 @@ function LoginForms({ darkMode, onLogin }) {
       <div className={styles.formularios}>
         <form onSubmit={handleSubmit}>
           <h1>E-mail</h1>
-          <input type="email" name="email" value={formData.email} onChange={handleChange} placeholder="Insira seu endereço de e-mail aqui" required/>
+          <input className={`${styles.inputs} ${darkMode ? styles.dark : styles.light} ${emailError ? styles.errorInput : styles.inputs}`} type="email" name="email" value={formData.email} onChange={handleChange} placeholder="Insira seu endereço de e-mail aqui" required/>
           <h1>Senha</h1>
+          <span className={styles.inputSenha}>
           <img
             src={showPassword ? iconVer : iconNaoVer}
             className={styles.iconSenha}
@@ -85,8 +97,10 @@ function LoginForms({ darkMode, onLogin }) {
             name="password"
             value={formData.password}
             onChange={handleChange}
+            className={`${styles.inputs} ${darkMode ? styles.dark : styles.light} ${passwordError ? styles.errorInput : styles.inputs}`}
             required
           />
+          </span>
           <a href="#">Esqueceu a senha?</a>
           {loginError && <div className={styles.errorMessage}>{loginError}</div>}
           <button type="submit">Entrar</button>

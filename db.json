@@ -24,6 +24,12 @@
       "name": "dsfsdffsf",
       "email": "frontdesenvolvimento@gmail.com",
       "password": "1234"
+    },
+    {
+      "id": "4c8a",
+      "name": "usuario",
+      "email": "usuario@usuario.com",
+      "password": "1234"
     }
   ]
 }
