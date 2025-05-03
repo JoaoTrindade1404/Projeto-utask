@@ -1,0 +1,43 @@
+.apiBox {
+    display: flex;
+    flex-direction: row;
+    border-radius: 20px;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 2px 2px 10px 2px rgba(0, 0, 0, 0.04);
+    width: 35vw;
+    height: 15vh;
+    flex-shrink: 0;
+    padding: 1vw;
+    gap: 1vh;
+  }
+
+  .apiBox h1 {
+    color: #141414;
+    font-family: Poppins;
+    font-size: 0.8vw;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+  
+  .apiBox p {
+    color: #141414;
+    font-family: Poppins;
+    font-size: 0.9vw;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  
+  .apiBox img {
+    width: 3vw;
+    height: 6vh;
+  }
+  
+  .apiText {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5vh;
+  }
+  

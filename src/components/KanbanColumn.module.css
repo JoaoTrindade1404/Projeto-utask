@@ -1,0 +1,6 @@
+.column{
+    background: var(--white-300);
+    height: 40vh;
+    width: 16vw;
+    border-radius: 10px;
+}

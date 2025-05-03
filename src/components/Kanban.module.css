@@ -1,0 +1,15 @@
+.kanban{
+    display: flex;
+    flex-direction: column;
+}
+
+.kanban button{
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.title{
+    display: flex;
+    flex-direction: row;
+}
