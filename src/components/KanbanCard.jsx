@@ -1,4 +1,4 @@
-import styles from "./KanbanCard.module.css";
+iimport styles from "./KanbanCard.module.css";
 import { useState } from "react";
 import expand from "../assets/expand_more.svg";
 import expand2 from "../assets/expand_less.svg";
@@ -13,7 +13,7 @@ function KanbanCard({ title, description, onDelete, onMoveLeft, onMoveRight }) {
           {showDescription ? "Esconder descrição" : "Ler descrição"}
           <img src={showDescription ? expand2 : expand} />
         </button>
-        {showDescription && <p>Penis</p>}
+        {showDescription && <p>Descricao</p>}
       </div>
       <div className={styles.buttons}>
         <span className={styles.menu}>
