@@ -2,7 +2,7 @@ import styles from "./Kanban.module.css";
 import img from "../assets/addTask.svg";
 import KanbanColumn from "./KanbanColumn";
 
-function Kanban({ titulo, showButton = false }) {
+function Kanban({ titulo, showButton = false, columnId, cards, moveCard}) {
   return (
     <div className={styles.kanban}>
       <span className={styles.title}>
@@ -13,7 +13,7 @@ function Kanban({ titulo, showButton = false }) {
           </button>
         )}
       </span>
-      <KanbanColumn />
+      <KanbanColumn columnId={columnId} cards = {cards} moveCard={moveCard}/>
     </div>
   );
 }

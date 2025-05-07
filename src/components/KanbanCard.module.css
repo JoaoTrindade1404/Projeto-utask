@@ -48,6 +48,7 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  position: relative;
   padding: 0.4vh 1vh;
 }
 
@@ -60,4 +61,31 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.arrowBack{
+  border-radius: 20px;
+  background: white;
+  width: 1.5vw;
+  height: 3vh;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #226ed8;
+}
+
+.excluir{
+  position: absolute;
+  display: flex;
+  align-items: center;
+  width: 12vh;
+  height: 5vh;
+  border-radius: 4px;
+  background: #ffffff;
+  box-shadow: 0px 0px 4px 0px #00000040;
+  color: #DF0000;
+  font-size: 2vh;
+  font-weight: 400;
+  cursor: pointer;
 }
