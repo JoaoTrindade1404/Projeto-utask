@@ -2,17 +2,43 @@ import styles from "./Kanban.module.css";
 import img from "../assets/addTask.svg";
 import KanbanColumn from "./KanbanColumn";
 import { useState } from "react";
+import api from "../api"
 
-function Kanban({ titulo, showButton = false, columnId, cards, moveCard }) {
+function Kanban({
+  titulo,
+  showButton = false,
+  columnId,
+  cards,
+  moveCard,
+  user,
+  createTask
+}) {
+  console.log(user)
   const [overlay, setOverlay] = useState(false);
-  const [title, setTitle] = useState("");
+  const [taskTitle, setTitle] = useState("");
   const [desc, setDesc] = useState("");
+
+  const handleCreateTask = async () => {
+    const taskData = {
+      title: taskTitle,
+      description: desc,
+      column: "todo"
+    };
+
+    await createTask(taskData);
+    setOverlay(false);
+
+  };
+
   return (
     <div className={styles.kanban}>
       <span className={styles.title}>
         <h1>{titulo}</h1>
         {showButton && (
-          <button className={styles.overlayBttn} onClick={() => setOverlay(true)}>
+          <button
+            className={styles.overlayBttn}
+            onClick={() => setOverlay(true)}
+          >
             <img src={img} />
           </button>
         )}
@@ -24,7 +50,10 @@ function Kanban({ titulo, showButton = false, columnId, cards, moveCard }) {
                   <h1>Nova Task</h1>
                   <div className={styles.underline}></div>
                 </span>
-                <button onClick={() => setOverlay(false)} className={styles.close}>
+                <button
+                  onClick={() => setOverlay(false)}
+                  className={styles.close}
+                >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     height="2vh"
@@ -41,13 +70,13 @@ function Kanban({ titulo, showButton = false, columnId, cards, moveCard }) {
                 <label htmlFor="title">
                   <strong>Titulo *</strong>
                 </label>
-                <input type="text" placeholder="Insira o titulo" id="title" />
+                <input type="text" placeholder="Insira o titulo" id="title" onChange={(e) => setTitle(e.target.value)}/>
                 <label htmlFor="desc">
                   <strong>Descrição</strong>
                 </label>
-                <input type="text" placeholder="Insira a descrição" id="desc" />
+                <input type="text" placeholder="Insira a descrição" id="desc" onChange={(e) => setDesc(e.target.value)} />
               </span>
-              <button className={styles.createTask}>Criar task</button>
+              <button className={styles.createTask} onClick={handleCreateTask}>Criar task</button>
             </div>
           </div>
         )}

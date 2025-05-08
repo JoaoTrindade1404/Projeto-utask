@@ -32,7 +32,7 @@ function App() {
       <Routes>
         <Route path="/" element={<LoginPage onLogin={handleLogin} darkMode={darkMode}  toggleTheme={toggleTheme}/>} />
         <Route path="/cadastro" element={<SignUpPage darkMode={darkMode} toggleTheme={toggleTheme}/>} />
-        <Route path="/kanban" element={<KanbanPage darkMode={darkMode} toggleTheme={toggleTheme}/>} />
+        <Route path="/kanban" element={<KanbanPage user={user} darkMode={darkMode} toggleTheme={toggleTheme}/>} />
       </Routes>
       </Router>
     </div>

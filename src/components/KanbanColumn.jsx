@@ -1,7 +1,7 @@
 import KanbanCard from "./KanbanCard";
 import styles from "./KanbanColumn.module.css";
 
-function KanbanColumn({ columnId, cards, moveCard }) {
+function KanbanColumn({ columnId, cards, moveCard, title, description }) {
   const cardsFiltro = cards.filter((card) => card.column === columnId);
   return (
     <div className={styles.column}>

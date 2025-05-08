@@ -5,29 +5,12 @@ import styles from "./KanbanPage.module.css";
 import KanbanApi from "./KanbanApi";
 import KanbanFooter from "./KanbanFooter";
 import Kanban from "./Kanban";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import api from "../api";
 
-function KanbanPage({ darkMode, toggleTheme }) {
-  const [cards, setCard] = useState([
-    {
-      id: 1,
-      title: "Titulo",
-      description: "Descricao",
-      column: "todo",
-    },
-    {
-      id: 2,
-      title: "Titulo2",
-      description: "Descricao2",
-      column: "todo",
-    },
-    {
-      id: 3,
-      title: "Titulo3",
-      description: "Descricao3",
-      column: "done",
-    },
-  ]);
+function KanbanPage({ darkMode, toggleTheme, user }) {
+  console.log(user)
+  const [cards, setCard] = useState([]);
   function moveCard(id, direcao) {
     setCard((prevCards) =>
       prevCards.map((card) => {
@@ -50,6 +33,34 @@ function KanbanPage({ darkMode, toggleTheme }) {
       })
     );
   }
+  const createTask = async (task) => {
+    const userResponse = await api.get(`/users/${user.id}`);
+
+    const newTask = {
+      id: userResponse.data.tasks.length + 1,
+      ...task,
+    };
+
+    userResponse.data.tasks.push(newTask);
+    await api.put(`/users/${user.id}`, userResponse.data);
+
+    setCard((prevCard) => [...prevCard, newTask]);
+  };
+
+  useEffect(() => {
+    const loadUserTasks = async () => {
+      try {
+        if (user) {
+          const response = await api.get(`/users/${user.id}`); 
+          setCard(response.data.tasks); 
+        }
+      } catch (error) {
+        console.error("Erro ao carregar as tasks:", error);
+      }
+    };
+
+    loadUserTasks();
+  }, [user]);
   return (
     <div className={styles.kanban}>
       <Header
@@ -69,18 +80,21 @@ function KanbanPage({ darkMode, toggleTheme }) {
           moveCard={moveCard}
           cards={cards}
           showButton={true}
+          createTask={createTask}
         />
         <Kanban
           titulo="Em andamento"
           columnId="doing"
           moveCard={moveCard}
           cards={cards}
+          createTask={createTask}
         />
         <Kanban
           titulo="Feito"
           columnId="done"
           cards={cards}
           moveCard={moveCard}
+          createTask={createTask}
         />
       </span>
       <KanbanFooter />
