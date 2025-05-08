@@ -4,4 +4,7 @@
     width: 16vw;
     border-radius: 10px;
     padding: 1vw;
+    display: flex;
+    gap: 1vw;
+    flex-direction: column;
 }

@@ -1,19 +1,58 @@
 import styles from "./Kanban.module.css";
 import img from "../assets/addTask.svg";
 import KanbanColumn from "./KanbanColumn";
+import { useState } from "react";
 
-function Kanban({ titulo, showButton = false, columnId, cards, moveCard}) {
+function Kanban({ titulo, showButton = false, columnId, cards, moveCard }) {
+  const [overlay, setOverlay] = useState(false);
+  const [title, setTitle] = useState("");
+  const [desc, setDesc] = useState("");
   return (
     <div className={styles.kanban}>
       <span className={styles.title}>
         <h1>{titulo}</h1>
         {showButton && (
-          <button>
+          <button className={styles.overlayBttn} onClick={() => setOverlay(true)}>
             <img src={img} />
           </button>
         )}
+        {overlay && (
+          <div className={styles.overlay}>
+            <div className={styles.modal}>
+              <div className={styles.header}>
+                <span>
+                  <h1>Nova Task</h1>
+                  <div className={styles.underline}></div>
+                </span>
+                <button onClick={() => setOverlay(false)} className={styles.close}>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    height="2vh"
+                    viewBox="0 0 24 24"
+                    width="1vw"
+                    fill="#3867D6"
+                  >
+                    <path d="M0 0h24v24H0V0z" fill="none" />
+                    <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z" />
+                  </svg>
+                </button>
+              </div>
+              <span className={styles.inputs}>
+                <label htmlFor="title">
+                  <strong>Titulo *</strong>
+                </label>
+                <input type="text" placeholder="Insira o titulo" id="title" />
+                <label htmlFor="desc">
+                  <strong>Descrição</strong>
+                </label>
+                <input type="text" placeholder="Insira a descrição" id="desc" />
+              </span>
+              <button className={styles.createTask}>Criar task</button>
+            </div>
+          </div>
+        )}
       </span>
-      <KanbanColumn columnId={columnId} cards = {cards} moveCard={moveCard}/>
+      <KanbanColumn columnId={columnId} cards={cards} moveCard={moveCard} />
     </div>
   );
 }

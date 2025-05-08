@@ -1,16 +1,130 @@
-.kanban{
-    display: flex;
-    flex-direction: column;
+.kanban {
+  display: flex;
+  flex-direction: column;
 }
 
-.kanban button{
-    background: none;
-    border: none;
-    cursor: pointer;
+.kanban button {
+  background: none;
+  border: none;
+  cursor: pointer;
 }
 
-.title{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+.title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.overlay {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: black;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 1000;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.header {
+  display: flex;
+  width: 100%;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 50vh;
+  width: 25vw;
+  background: white;
+  border-radius: 20px;
+  padding: 2vw 0;
+}
+
+.modal h1 {
+  color: #3867d6;
+  text-align: center;
+  font-family: Poppins;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  justify-self: center;
+}
+
+.underline {
+  width: 6vw;
+  height: 0.3vh;
+  flex-shrink: 0;
+  border-radius: 10px;
+  background: #3867d6;
+  margin-bottom: 2vw;
+}
+
+.inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  height: 100%;
+}
+
+.modal input {
+  width: 20vw;
+  height: 4vh;
+  flex-shrink: 0;
+  border-radius: 10px;
+  background: #eee;
+  border: none;
+  padding: 0 1vw;
+}
+
+.overlay .createTask {
+  display: flex;
+  width: 20vw;
+  height: 4vh;
+  padding: 10px 0px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 20px;
+  background: linear-gradient(90deg, #4890f5 0%, #226ed8 99.7%);
+  color: white;
+  color: #fff;
+  text-align: center;
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  margin-top: 4vh;
+  line-height: normal;
+  justify-self: bottom;
+  border: none;
+  cursor: pointer;
+}
+
+.header .close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  width: 4vh;
+  height: 4vh;
+  flex-shrink: 0;
+  border-radius: 20px;
+  border: 2px solid #3867d6;
+  margin: 0;
+  position: absolute;
+  right: 10%;
+  top: 0%;
+}
+
+.createTask:hover {
+  background: linear-gradient(90deg, #0b3b7e 0%, #0b3b7e 99.7%);
 }
