@@ -9,7 +9,6 @@ import { useEffect, useState } from "react";
 import api from "../api";
 
 function KanbanPage({ darkMode, toggleTheme, user }) {
-  console.log(user)
   const [cards, setCard] = useState([]);
   function moveCard(id, direcao) {
     setCard((prevCards) =>
@@ -30,7 +29,7 @@ function KanbanPage({ darkMode, toggleTheme, user }) {
           return { ...card, column: novaColuna };
         }
         return card;
-      })
+      }) 
     );
   }
   const createTask = async (task) => {

@@ -7,6 +7,7 @@
   max-height: 15vh;
   justify-content: space-between;
   padding: 0.4vh;
+  position: relative;
 }
 
 .text {
@@ -77,6 +78,8 @@
 
 .excluir{
   position: absolute;
+  top: 20%;
+  left: 50%;
   display: flex;
   align-items: center;
   width: 12vh;
@@ -88,4 +91,5 @@
   font-size: 2vh;
   font-weight: 400;
   cursor: pointer;
+  z-index: 1000;
 }

@@ -2,6 +2,7 @@ import styles from "./KanbanCard.module.css";
 import { useState } from "react";
 import expand from "../assets/expand_more.svg";
 import expand2 from "../assets/expand_less.svg";
+
 function KanbanCard({ title, description, onDelete, onMoveLeft, onMoveRight,columnId}) {
   const [showDescription, setShowDescription] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
