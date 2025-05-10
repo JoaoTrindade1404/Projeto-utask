@@ -1,0 +1,63 @@
+:root{
+  --white: #ffffff;
+  --white-200: #fafafa;
+  --white-300: #eeeeee;
+  
+  --gray-100: #c4c4c4;
+  
+  --black: #141414;
+
+  --yellow-100: #fffcee;
+  --yellow-200: #fff5c0;
+  --yellow-300: #ffe03f;
+  --yellow-400: #ffd569;
+  --yellow-500: #fbb910;
+
+  --red-100: #ffafaf;
+  --red-700: #df0000;
+  
+  --blue-100: #4890f5;
+  --blue-200: #226ed8;
+  --blue-300: #114fa7;
+  --blue-400: #002d6c;
+  --blue-600: #00122A;
+
+
+  /*dark mode*/
+
+  --dark-bg: #222;
+  --dark-2: #333333;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  background: var(--white);
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  transition: 0.3s;
+}
+
+body.light{
+  background: white;
+}
+
+body.dark{
+  background: var(--dark-bg);
+  color: var(--white);
+}
+
+.dark input {
+  background: var(--dark-2);
+  color: white;
+}
+
+.dark a {
+  color: var(--white);
+}
+

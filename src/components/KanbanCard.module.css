@@ -1,0 +1,134 @@
+.card {
+  display: flex;
+  width: 14vw;
+  height: auto;
+  background: var(--white);
+  border-radius: 10px;
+  justify-content: space-between;
+  padding: 0.4vh;
+  position: relative;
+}
+
+.dark{
+  background: #3D3D3D;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  padding: 1vh;
+  gap: 2vh;
+  height: auto;
+}
+
+.text h1 {
+  color: #141414;
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.dark .text h1{
+  color: white;
+}
+
+.dark .text p{
+  color: white;
+}
+
+.dark .text button{
+  color: white;
+}
+
+.text button {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: #141414;
+  font-family: Poppins;
+  font-size: 0.7vw;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+}
+
+.text button img {
+  width: 0.3vw;
+  height: 0.6vh;
+  margin-bottom: 1%;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  padding: 0.4vh 1vh;
+}
+
+.arrow {
+  border-radius: 20px;
+  background: #226ed8;
+  width: 1.5vw;
+  height: 3vh;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.arrowBack{
+  border-radius: 20px;
+  background: white;
+  width: 1.5vw;
+  height: 3vh;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1.5px solid #226ed8;
+}
+
+.excluir{
+  position: absolute;
+  top: 20%;
+  right: 30%;
+  display: flex;
+  align-items: center;
+  width: 12vh;
+  height: 5vh;
+  border-radius: 4px;
+  background: #ffffff;
+  box-shadow: 0px 0px 4px 0px #00000040;
+  color: #DF0000;
+  font-size: 2vh;
+  font-weight: 400;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.description {
+  word-wrap: break-word;      
+  word-break: break-word;     
+  overflow-wrap: break-word;  
+  white-space: normal; 
+}
+
+.arrows{
+  display: flex;
+  gap: 0.2vw;
+}
+
+.menu{
+  display: flex;
+  justify-self: flex-end;
+  align-self: flex-end;
+}
+
+.dark .excluir{
+  background: #535353;
+}
+

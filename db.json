@@ -1,0 +1,77 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "João Silva",
+      "email": "joao@example.com",
+      "password": "senha123",
+      "confirmPassword": "senha123",
+      "tasks": [
+        {
+          "id": 1,
+          "title": "",
+          "description": ""
+        }
+      ]
+    },
+    {
+      "id": "f786",
+      "name": "Joao V P S Trindade",
+      "email": "joaotrindade430@gmail.com",
+      "password": "1234",
+      "tasks": [
+        {
+          "id": 1,
+          "title": "",
+          "description": ""
+        },
+        {
+          "id": 2,
+          "title": "dhrhthgft",
+          "description": "fhgtgfj",
+          "column": "todo"
+        }
+      ]
+    },
+    {
+      "id": "586d",
+      "name": "dsfsdf",
+      "email": "joaotrindade40@gmail.com",
+      "password": "123",
+      "tasks": [
+        {
+          "id": 1,
+          "title": "",
+          "description": ""
+        }
+      ]
+    },
+    {
+      "id": "fca6",
+      "name": "dsfsdffsf",
+      "email": "frontdesenvolvimento@gmail.com",
+      "password": "1234",
+      "tasks": [
+        {
+          "id": 1,
+          "title": "",
+          "description": ""
+        }
+      ]
+    },
+    {
+      "id": "4c8a",
+      "name": "usuario",
+      "email": "usuario@usuario.com",
+      "password": "1234",
+      "tasks": [
+        {
+          "id": 1,
+          "title": "sfgs",
+          "description": "sdfgsdfg",
+          "column": "todo"
+        }
+      ]
+    }
+  ]
+}
