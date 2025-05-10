@@ -1,9 +1,10 @@
 import styles from "./KanbanApi.module.css";
 import axios from "axios";
 import icon from "../assets/lampada.svg";
+import icon2 from "../assets/lampada_dark.svg";
 import { useState, useEffect } from "react";
 
-function KanbanApi() {
+function KanbanApi({darkMode}) {
   const [frase, setFrase] = useState("");
   const [fraseTraduzida, setFraseTraduzida] = useState("");
   const buscarFrase = async () => {
@@ -42,8 +43,8 @@ function KanbanApi() {
     }
   }, [frase]);
   return (
-    <div className={styles.apiBox}>
-      <img src={icon} />
+    <div className={`${styles.apiBox} ${darkMode ? styles.dark : styles.light}`}>
+      <img src={darkMode ? icon2 : icon} />
       <span className={styles.apiText}>
         <h1>Frase do dia</h1>
         <p>{fraseTraduzida}</p>

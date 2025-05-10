@@ -4,10 +4,13 @@
   height: auto;
   background: var(--white);
   border-radius: 10px;
-  max-height: 15vh;
   justify-content: space-between;
   padding: 0.4vh;
   position: relative;
+}
+
+.dark{
+  background: #3D3D3D;
 }
 
 .text {
@@ -15,6 +18,7 @@
   flex-direction: column;
   padding: 1vh;
   gap: 2vh;
+  height: auto;
 }
 
 .text h1 {
@@ -24,6 +28,18 @@
   font-style: normal;
   font-weight: 600;
   line-height: normal;
+}
+
+.dark .text h1{
+  color: white;
+}
+
+.dark .text p{
+  color: white;
+}
+
+.dark .text button{
+  color: white;
 }
 
 .text button {
@@ -73,13 +89,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid #226ed8;
+  border: 1.5px solid #226ed8;
 }
 
 .excluir{
   position: absolute;
   top: 20%;
-  left: 50%;
+  right: 30%;
   display: flex;
   align-items: center;
   width: 12vh;
@@ -93,3 +109,26 @@
   cursor: pointer;
   z-index: 1000;
 }
+
+.description {
+  word-wrap: break-word;      
+  word-break: break-word;     
+  overflow-wrap: break-word;  
+  white-space: normal; 
+}
+
+.arrows{
+  display: flex;
+  gap: 0.2vw;
+}
+
+.menu{
+  display: flex;
+  justify-self: flex-end;
+  align-self: flex-end;
+}
+
+.dark .excluir{
+  background: #535353;
+}
+

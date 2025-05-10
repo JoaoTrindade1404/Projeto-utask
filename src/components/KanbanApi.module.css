@@ -41,3 +41,18 @@
     gap: 0.5vh;
   }
   
+  .dark{
+    background: #3D3D3D;
+  }
+
+  .dark .apiText h1{
+    color: white;
+  }
+  
+  .dark .apiText p{
+    color: white;
+  }
+
+  .light{
+    background: #fff;
+  }
