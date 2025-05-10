@@ -24,12 +24,6 @@
           "id": 1,
           "title": "",
           "description": ""
-        },
-        {
-          "id": 2,
-          "title": "dhrhthgft",
-          "description": "fhgtgfj",
-          "column": "todo"
         }
       ]
     },
@@ -67,8 +61,20 @@
       "tasks": [
         {
           "id": 1,
-          "title": "sdfsdf",
-          "description": "sdfsdf",
+          "title": "Tarefa 1",
+          "description": "Descrição da tarefa 1",
+          "column": "todo"
+        },
+        {
+          "id": 2,
+          "title": "qweqweqwe",
+          "description": "gsfgsdfg",
+          "column": "todo"
+        },
+        {
+          "id": 3,
+          "title": "bxcvb",
+          "description": "xcvbxcvb",
           "column": "todo"
         }
       ]

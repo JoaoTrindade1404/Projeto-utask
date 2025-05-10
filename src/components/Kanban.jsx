@@ -11,9 +11,7 @@ function Kanban({
   cards,
   moveCard,
   user,
-  createTask,
-  deleteTask,
-  darkMode
+  createTask
 }) {
   console.log(user)
   const [overlay, setOverlay] = useState(false);
@@ -45,7 +43,7 @@ function Kanban({
           </button>
         )}
         {overlay && (
-          <div className={`${styles.overlay} ${darkMode ? styles.dark : styles.light}`}>
+          <div className={styles.overlay}>
             <div className={styles.modal}>
               <div className={styles.header}>
                 <span>
@@ -72,18 +70,18 @@ function Kanban({
                 <label htmlFor="title">
                   <strong>Titulo *</strong>
                 </label>
-                <input type="text"  id="title" onChange={(e) => setTitle(e.target.value)}/>
+                <input type="text" placeholder="Insira o titulo" id="title" onChange={(e) => setTitle(e.target.value)}/>
                 <label htmlFor="desc">
                   <strong>Descrição</strong>
                 </label>
-                <input type="text" id="desc" onChange={(e) => setDesc(e.target.value)} />
+                <input type="text" placeholder="Insira a descrição" id="desc" onChange={(e) => setDesc(e.target.value)} />
               </span>
               <button className={styles.createTask} onClick={handleCreateTask}>Criar task</button>
             </div>
           </div>
         )}
       </span>
-      <KanbanColumn  darkMode={darkMode} user={user} deleteTask={deleteTask} columnId={columnId} cards={cards} moveCard={moveCard} />
+      <KanbanColumn columnId={columnId} cards={cards} moveCard={moveCard} />
     </div>
   );
 }

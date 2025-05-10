@@ -9,7 +9,6 @@ import { useEffect, useState } from "react";
 import api from "../api";
 
 function KanbanPage({ darkMode, toggleTheme, user }) {
-  console.log(user)
   const [cards, setCard] = useState([]);
   function moveCard(id, direcao) {
     setCard((prevCards) =>
@@ -25,8 +24,6 @@ function KanbanPage({ darkMode, toggleTheme, user }) {
             novaColuna = "todo";
           else if (card.column === "done" && direcao === "esquerda")
             novaColuna = "doing";
-          else if (card.column === "done" && direcao === "direita")
-            novaColuna = "todo"
           else novaColuna = card.column;
 
           return { ...card, column: novaColuna };
@@ -47,27 +44,6 @@ function KanbanPage({ darkMode, toggleTheme, user }) {
     await api.put(`/users/${user.id}`, userResponse.data);
 
     setCard((prevCard) => [...prevCard, newTask]);
-  };
-
-  const deleteTask = async (userId, taskId) => {
-    try {
-      
-      const response = await api.get(`/users/${userId.id}`);
-      const user = response.data;
-  
-      
-      const updatedTasks = user.tasks.filter((task) => task.id !== taskId);
-  
-      
-      await api.patch(`/users/${userId.id}`, {
-        tasks: updatedTasks,
-      });
-  
-      
-      setCard((prev) => prev.filter((task) => task.id !== taskId));
-    } catch (err) {
-      console.error("Erro ao deletar task:", err);
-    }
   };
 
   useEffect(() => {
@@ -94,7 +70,7 @@ function KanbanPage({ darkMode, toggleTheme, user }) {
         showLogo={true}
       />
       <span className={styles.api}>
-        <KanbanApi darkMode={darkMode}/>
+        <KanbanApi />
       </span>
       <span className={styles.kanbanContainer}>
         <Kanban
@@ -104,9 +80,6 @@ function KanbanPage({ darkMode, toggleTheme, user }) {
           cards={cards}
           showButton={true}
           createTask={createTask}
-          deleteTask={deleteTask}
-          user={user}
-          darkMode={darkMode}
         />
         <Kanban
           titulo="Em andamento"
@@ -114,9 +87,6 @@ function KanbanPage({ darkMode, toggleTheme, user }) {
           moveCard={moveCard}
           cards={cards}
           createTask={createTask}
-          deleteTask={deleteTask}
-          user={user}
-          darkMode={darkMode}
         />
         <Kanban
           titulo="Feito"
@@ -124,12 +94,9 @@ function KanbanPage({ darkMode, toggleTheme, user }) {
           cards={cards}
           moveCard={moveCard}
           createTask={createTask}
-          deleteTask={deleteTask}
-          user={user}
-          darkMode={darkMode}
         />
       </span>
-      <KanbanFooter darkMode={darkMode}/>
+      <KanbanFooter />
     </div>
   );
 }

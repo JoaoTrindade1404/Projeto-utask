@@ -128,11 +128,3 @@
 .createTask:hover {
   background: linear-gradient(90deg, #0b3b7e 0%, #0b3b7e 99.7%);
 }
-
-.dark .modal{
-  background: #3D3D3D;
-}
-
-.dark .modal .inputs input{
-  background: #333333;
-}
