@@ -8,6 +8,17 @@
 }
 
 .divisor {
+    display: none;
+}
+
+.ilustracao{
+    display: none;
+      
+}
+
+@media (min-width: 1366px){
+  .divisor {
+    display: flex;
     position: absolute;
     right: 50%;
     margin-top: 5vh;
@@ -21,4 +32,5 @@
     width: 50vw;
     margin-top: 10vh;
       
+}
 }

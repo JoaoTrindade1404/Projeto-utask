@@ -79,12 +79,16 @@ function LoginForms({ darkMode, onLogin }) {
         darkMode ? styles.dark : styles.light
       }`}
     >
-      <img src={utasklogo} alt="" />
+      <img className={styles.utaskLogo} src={utasklogo} alt="" />
       <div className={styles.formularios}>
         <form onSubmit={handleSubmit}>
-          <h1>E-mail</h1>
+          <div className={styles.inputs2}>
+          <span>
+            <h1>E-mail</h1>
           <input className={`${styles.inputs} ${darkMode ? styles.dark : styles.light} ${emailError ? styles.errorInput : styles.inputs}`} type="email" name="email" value={formData.email} onChange={handleChange} placeholder="Insira seu endereço de e-mail aqui" required/>
-          <h1>Senha</h1>
+          </span>
+          <span>
+            <h1>Senha</h1>
           <span className={styles.inputSenha}>
           <img
             src={showPassword ? iconVer : iconNaoVer}
@@ -101,9 +105,12 @@ function LoginForms({ darkMode, onLogin }) {
             required
           />
           </span>
+          </span>
+          
+          </div>
           <a href="#">Esqueceu a senha?</a>
           {loginError && <div className={styles.errorMessage}>{loginError}</div>}
-          <button type="submit">Entrar</button>
+          <button type="submit" className={styles.submitBttn}>Entrar</button>
         </form>
       </div>
       <span>

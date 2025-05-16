@@ -3,23 +3,37 @@
   height: 100vh;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 0 5vw;
+  justify-content: center;
   position: relative;
 }
 
 .img {
+  display: none;
+}
+
+.divisoria {
+  display: none;
+}
+
+@media (min-width: 1366px){
+  .loginpage{
+    padding: 0 5vw;
+    justify-content: space-between;
+  }
+  
+  .img {
   display: flex;
   height: 80vh;
   width: 40vw;
   margin-top: 10vh;
   margin-right: 5vw;
 }
-
 .divisoria {
+  display: flex;
   position: absolute;
   right: 50%;
   margin-top: 5vh;
   height: 85vh;
+}
 }
 

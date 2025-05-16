@@ -2,10 +2,14 @@ import utasklogo from "../assets/TituloCadastro.svg";
 import styles from "./SignUpForm.module.css";
 import iconNaoVer from "../assets/icon NaoVisivel.svg";
 import iconVer from "../assets/iconVer.svg";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import api from "../api.js";
+import CadastroPopUp from "./cadastroPopUp.jsx";
 
 function SignUpForm({ darkMode }) {
+  const [popUp, setPopUp] = useState(false);
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -15,16 +19,32 @@ function SignUpForm({ darkMode }) {
 
   const [passwordError, setPasswordError] = useState(false);
 
+  useEffect(() => {
+    if (
+      formData.password &&
+      formData.confirmPassword &&
+      formData.password !== formData.confirmPassword
+    ) {
+      setPasswordError(true);
+    } else {
+      setPasswordError(false);
+    }
+  }, [formData.password, formData.confirmPassword]);
+
+  useEffect(() => {
+    if (popUp) {
+      setTimeout(() => {
+        setPopUp(false);
+        navigate("/");
+      }, 2000);
+    }
+  }, [popUp, navigate]);
+
   const handleChange = (e) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
     });
-    if (name === "password" || name === "confirmPassword") {
-      if (formData.password && formData.confirmPassword) {
-        setFormData(formData.password !== formData.confirmPassword);
-      }
-    }
   };
 
   const handleSubmit = async (e) => {
@@ -48,7 +68,7 @@ function SignUpForm({ darkMode }) {
 
       const { confirmPassword, ...userData } = formData;
       await api.post("/users", userData);
-      alert("Cadastro realizado com sucesso!");
+      setPopUp(true);
     } catch (error) {
       console.error("Erro no cadastro:", error);
       alert("Erro ao cadastrar. Tente novamente.");
@@ -129,8 +149,9 @@ function SignUpForm({ darkMode }) {
         {passwordError && (
           <span className={styles.errorAlert}>As senhas não coincidem</span>
         )}
-        <button>Criar cadastro</button>
+        <button className={styles.submitButtn}>Criar cadastro</button>
       </form>
+      {popUp && <CadastroPopUp />}
     </div>
   );
 }

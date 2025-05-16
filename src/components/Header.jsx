@@ -6,8 +6,8 @@ import utask2 from '../assets/uTask 3.0 _azul.svg'
 function Header({darkMode, toggleTheme, logo, utask, showLogo = false}){
     return(
         <header className={`${styles.header} ${darkMode ? styles.dark : styles.light}`}>
-            {showLogo && <img src={darkMode ? logo2 : logo} alt="Unect logo" />}
-            {showLogo && <img src={darkMode ? utask2 : utask} alt="Utask" />}
+            {showLogo && <img className={styles.logo} src={darkMode ? logo2 : logo} alt="Unect logo" />}
+            {showLogo && <img className={styles.utask} src={darkMode ? utask2 : utask} alt="Utask" />}
             {showLogo && <ToggleTheme darkMode={darkMode} toggleTheme={toggleTheme}/>}
         </header>
     )

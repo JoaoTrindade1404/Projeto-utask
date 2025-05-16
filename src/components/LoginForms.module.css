@@ -4,18 +4,22 @@
   justify-content: center;
   flex-direction: column;
   gap: 2rem;
-  margin-right: 5vw;
+  margin: 0;
 }
 .loginforms h1 {
   font-size: 16px;
   font-weight: 400;
 }
 
+.submitBttn{
+  margin-top: 10vw;
+}
+
 .inputs {
   font-size: 1rem;
   font-family: "Poppins", sans-serif;
   font-weight: 400;
-  width: 28vw;
+  width: 80vw;
   height: 2.5rem;
   background-color: #EEF5FF;
   border: 2px var(--blue-400) solid;
@@ -24,7 +28,7 @@
 }
 .iconSenha {
   position: absolute;
-  top: 20%;
+  top: 0%;
   right: 3%;
   cursor: pointer;
 }
@@ -39,6 +43,12 @@
   display: flex;
   gap: 1rem;
   flex-direction: column;
+}
+
+.utaskLogo{
+  width: 50vw;
+  height: 5vh;
+  margin-bottom: 3dvh;
 }
 
 .loginforms button {
@@ -61,7 +71,7 @@
 
 .loginforms form a {
   font-weight: 400;
-  font-size: 10px;
+  font-size: 0.8rem;
   color: var(--blue-200);
 }
 
@@ -96,4 +106,26 @@
 
 .inputSenha{
   position: relative;
+}
+
+.inputs2{
+  display: flex;
+  flex-direction: column;
+  gap: 3dvh;
+}
+
+@media (min-width: 1366px){
+  .loginforms {
+  margin-right: 5vw;
+}
+  .inputs {
+  width: 28vw;
+}
+.submitBttn{
+  margin-top: 3vw;
+}
+.utaskLogo{
+  width: 30vw;
+  height: 5vh;
+}
 }

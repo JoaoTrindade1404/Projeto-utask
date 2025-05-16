@@ -18,7 +18,7 @@
 }
 
 .logo {
-  width: 30vw;
+  width: 50vw;
   height: 10vh;
 }
 
@@ -26,7 +26,7 @@
   font-size: 1rem;
   font-family: "Poppins", sans-serif;
   font-weight: 400;
-  width: 25vw;
+  width: 90vw;
   height: 2.5rem;
   border: 2px var(--blue-400) solid;
   border-radius: 8px;
@@ -43,7 +43,7 @@
 .signForm button {
   border-radius: 20px;
   background: var(--blue-200);
-  width: 25vw;
+  width: 90vw;
   height: 6vh;
   font-weight: 600;
   color: white;
@@ -65,10 +65,10 @@
 
 .iconSenha {
   position: absolute;
-  right: 3%;
-  top: 45%;
-  width: 2vw;
-  height: 3.5vh;
+  right: 5%;
+  top: 50%;
+  width: 10%;
+  height: 40%;
   cursor: pointer;
 }
 
@@ -82,7 +82,23 @@
   transition: 0.3s;
 }
 
-.errorAlert{
+.errorAlert {
   color: #ff4444 !important;
-  
+}
+
+@media (min-width: 1366px) {
+  .logo {
+    width: 30vw;
+    height: 10vh;
+  }
+  .signForm input {
+    width: 25vw;
+  }
+  .signForm button {
+    width: 25vw;
+  }
+  .iconSenha {
+    width: 2vw;
+    height: 2vw;
+  }
 }

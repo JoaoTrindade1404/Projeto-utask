@@ -1,11 +1,19 @@
 import KanbanCard from "./KanbanCard";
 import styles from "./KanbanColumn.module.css";
 
-function KanbanColumn({ columnId, cards, moveCard, deleteTask, user, darkMode }) {
-  console.log(user)
+function KanbanColumn({
+  columnId,
+  cards = [],
+  moveCard,
+  deleteTask,
+  user,
+  darkMode,
+}) {
   const cardsFiltro = cards.filter((card) => card.column === columnId);
   return (
-    <div className={`${styles.column} ${darkMode ? styles.dark : styles.light}`}>
+    <div
+      className={`${styles.column} ${darkMode ? styles.dark : styles.light}`}
+    >
       {cardsFiltro.map((card) => (
         <KanbanCard
           onMoveLeft={() => moveCard(card.id, "esquerda")}
@@ -14,9 +22,9 @@ function KanbanColumn({ columnId, cards, moveCard, deleteTask, user, darkMode })
           title={card.title}
           description={card.description}
           columnId={columnId}
-          deleteTask={(deleteTask)}
+          deleteTask={deleteTask}
           cardId={card.id}
-          user = {user}
+          user={user}
           darkMode={darkMode}
         />
       ))}

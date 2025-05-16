@@ -1,0 +1,167 @@
+.overlay {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: black;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 1000;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.header {
+  display: flex;
+  width: 100%;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: fit-content;
+  width: 80vw;
+  background: white;
+  border-radius: 20px;
+  padding: 8vw 0;
+}
+
+.modal h1 {
+  color: #3867d6;
+  text-align: center;
+  font-family: Poppins;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  justify-self: center;
+}
+
+.underline {
+  width: 30vw;
+  height: 0.3vh;
+  flex-shrink: 0;
+  border-radius: 10px;
+  background: #3867d6;
+  margin-bottom: 2vw;
+}
+
+.inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 5vw;
+  height: fit-content;
+  margin-top: 5vw;
+}
+
+.input{
+    display: flex;
+    flex-direction: column;
+}
+
+.inputTitle{
+  width: 60vw;
+  height: 5vh;
+  flex-shrink: 0;
+  border-radius: 10px;
+  background: #eee;
+  border: none;
+  padding: 0 1vw;
+}
+
+.inputDesc{
+  width: 60vw;
+  height: 15vh;
+  flex-shrink: 0;
+  border-radius: 10px;
+  background: #eee;
+  border: none;
+  padding: 0 1vw;
+}
+
+
+.overlay .createTask {
+  display: flex;
+  width: 60vw;
+  height: 5vh;
+  padding: 10px 0px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 20px;
+  background: linear-gradient(90deg, #4890f5 0%, #226ed8 99.7%);
+  color: white;
+  color: #fff;
+  text-align: center;
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  margin-top: 5vh;
+  line-height: normal;
+  justify-self: bottom;
+  border: none;
+  cursor: pointer;
+}
+
+.header .close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  width: 4vh;
+  height: 4vh;
+  flex-shrink: 0;
+  border-radius: 20px;
+  border: 2px solid #3867d6;
+  margin: 0;
+  position: absolute;
+  right: 10%;
+  top: 0%;
+  background: none;
+}
+
+.createTask:hover {
+  background: linear-gradient(90deg, #0b3b7e 0%, #0b3b7e 99.7%);
+}
+
+.dark .modal{
+  background: #3D3D3D;
+}
+
+.dark .modal .inputs input{
+  background: #333333;
+}
+
+@media (min-width: 1366px){
+.modal {
+  width: 25vw;
+  padding: 2vw 0;
+}
+.underline {
+  width: 7vw;
+  height: 0.3vh;
+}
+.inputTitle {
+  width: 20vw;
+  height: 5vh;
+}
+.inputs {
+  gap: 1vw;
+  margin: 0;
+}
+.inputDesc{
+  width: 20vw;
+  height: 10vh;
+}
+.overlay .createTask {
+  width: 20vw;
+  height: 5vh;
+  padding: 10px 0px;
+}
+}
