@@ -10,6 +10,7 @@ Este projeto é uma aplicação web no estilo **Single-Page Application (SPA)**,
     * **Ler:** Visualizar todas as tarefas em suas respectivas colunas (Ex: "A Fazer", "Em Progresso", "Concluído").
     * **Atualizar:** Mover tarefas entre as colunas (drag and drop, se implementado) ou editar seu conteúdo.
     * **Deletar:** Remover tarefas do painel.
+    * **Botão Dark/Light mode** para alternar entre o tema do projeto
 * **Consumo de API Externa:** Todas as operações de CRUD são realizadas através de requisições HTTP a uma API RESTful externa, manipulando os dados de forma dinâmica.
 
 ## 🛠️ Tecnologias Utilizadas
