@@ -17,7 +17,7 @@ Este projeto é uma aplicação web no estilo **Single-Page Application (SPA)**,
 * **React.js:** Biblioteca principal para a construção da interface de usuário.
 * **JavaScript (ES6+):** Linguagem base para a lógica da aplicação.
 * **Axios:** Para realizar as chamadas à API externa.
-* **Styled Components / CSS Modules:** Para a estilização dos componentes (adapte conforme o que você usou).
+* **CSS Modules:** Para a estilização dos componentes.
 * **React Router Dom:** Para o gerenciamento das rotas.
 
 ## 🚀 Como Executar o Projeto
@@ -39,7 +39,7 @@ Este projeto é uma aplicação web no estilo **Single-Page Application (SPA)**,
 
 4.  **Inicie o projeto:**
     ```bash
-    npm start
+    npm run dev
     ```
 
 5.  Abra `http://localhost:3000` no seu navegador para ver a aplicação.
